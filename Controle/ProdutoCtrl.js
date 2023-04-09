@@ -57,8 +57,24 @@ export default class ProdutoCtrl{
                     });
 
                     resposta.json(response);
-
                 }
+                
+            }
+            else if (intencao['displayName'] === 'Pedido - yes'){
+                let numPedido = parseInt(Math.random() * 123546);
+                let resPedido = {
+                    "fulfillmentMessages": []
+                }
+                resPedido['fulfillmentMessages'].push({
+                    "text": {
+                        "text":[
+                            "Pedido confirmado nº"+ numPedido +". Por favor, informe o endereço de entrega."
+                        ]
+                    }
+                });
+
+                resposta.json(resPedido);
+
             }
         }
     }

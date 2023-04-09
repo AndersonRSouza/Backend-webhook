@@ -7,6 +7,7 @@ const porta = 5001;
 const app = express();
 app.use(express.json());
 app.use('/webhook', rotaDlgFlow);
+app.use(express.static("./html"));
 
 app.listen(porta, host, ()=>{
     console.log("Webhook em execução");
